@@ -106,46 +106,46 @@ CREATE TABLE IF NOT EXISTS Multas (
         REFERENCES Funcionario(Id_Funcionario)
 );
 
--- Funcionários
+
 CREATE INDEX idx_funcionario_nome
 ON Funcionario (Nome);
 
 CREATE INDEX idx_funcionario_funcao
 ON Funcionario (Funcao);
 
--- Usuários
+
 CREATE INDEX idx_usuarios_funcionario
 ON Usuarios (Id_Funcionario);
 
 CREATE INDEX idx_usuarios_email
 ON Usuarios (Email);
 
--- Cargas
+
 CREATE INDEX idx_carga_origem_destino
 ON Carga (Origem, Destino);
 
 CREATE INDEX idx_carga_data_envio
 ON Carga (Data_Envio);
 
--- Banco de horas
+
 CREATE INDEX idx_banco_funcionario_data
 ON Banco_de_horas (Id_Funcionario, Data_Registro);
 
--- Abastecimentos
+
 CREATE INDEX idx_abastecimentos_veiculo
 ON Abastecimentos (Id_Veiculo);
 
 CREATE INDEX idx_abastecimentos_data
 ON Abastecimentos (Data_Abastecimento);
 
--- Manutenções
+
 CREATE INDEX idx_manutencoes_veiculo
 ON Manutencoes (Id_Veiculo);
 
 CREATE INDEX idx_manutencoes_data
 ON Manutencoes (Data_Manutencao);
 
--- Viagens
+
 CREATE INDEX idx_viagens_veiculo
 ON Viagens (Id_Veiculo);
 
@@ -161,7 +161,7 @@ ON Viagens (Data_Saida);
 CREATE INDEX idx_viagens_origem_destino
 ON Viagens (Origem, Destino);
 
--- Multas
+
 CREATE INDEX idx_multas_veiculo
 ON Multas (Id_Veiculo);
 
