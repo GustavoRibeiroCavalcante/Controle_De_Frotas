@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS control;
 USE control;
 
-CREATE TABLE IF NOT EXISTS Funcionario (
+CREATE TABLE Funcionario (
     Id_Funcionario INT AUTO_INCREMENT PRIMARY KEY,
     CPF CHAR(11) NOT NULL UNIQUE,
     Nome VARCHAR(100) NOT NULL,
@@ -16,6 +16,8 @@ CREATE TABLE IF NOT EXISTS Usuarios (
     Id_Funcionario INT NOT NULL,
     Senha VARCHAR(255) NOT NULL,
     Email VARCHAR(100) NOT NULL,
+    Nivel_Permissao ENUM('ADMIN', 'GERENTE', 'USUARIO', 'Motorista', 'RH') NOT NULL,
+    FOREIGN KEY (Id_Funcionario) REFERENCES Funcionario(Id_Funcionario)
     Nivel_Permissao ENUM(
         'ADMIN',
         'GERENTE',
@@ -50,6 +52,7 @@ CREATE TABLE IF NOT EXISTS Banco_de_horas (
     Id_Funcionario INT NOT NULL,
     Horas DECIMAL(5,2) NOT NULL,
     Data_Registro DATE NOT NULL,
+    FOREIGN KEY (Id_Funcionario) REFERENCES Funcionario(Id_Funcionario)
     FOREIGN KEY (Id_Funcionario)
         REFERENCES Funcionario(Id_Funcionario)
 );
@@ -85,6 +88,9 @@ CREATE TABLE IF NOT EXISTS Viagens (
     Data_Chegada DATETIME,
     Origem VARCHAR(100) NOT NULL,
     Destino VARCHAR(100) NOT NULL,
+    FOREIGN KEY (Id_Veiculo) REFERENCES Veiculos(Id_Veiculo),
+    FOREIGN KEY (Id_Funcionario) REFERENCES Funcionario(Id_Funcionario),
+    FOREIGN KEY (Id_Carga) REFERENCES Carga(Id_Carga)
     FOREIGN KEY (Id_Veiculo)
         REFERENCES Veiculos(Id_Veiculo),
     FOREIGN KEY (Id_Funcionario)
@@ -100,6 +106,8 @@ CREATE TABLE IF NOT EXISTS Multas (
     Data_Multa DATE NOT NULL,
     Valor DECIMAL(10,2) NOT NULL,
     Motivo VARCHAR(255),
+    FOREIGN KEY (Id_Veiculo) REFERENCES Veiculos(Id_Veiculo),
+    FOREIGN KEY (Id_Funcionario) REFERENCES Funcionario(Id_Funcionario)
     FOREIGN KEY (Id_Veiculo)
         REFERENCES Veiculos(Id_Veiculo),
     FOREIGN KEY (Id_Funcionario)
