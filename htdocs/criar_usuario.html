@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR" class="auth-pending">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <style>html.auth-pending body .layout{display:none!important}html.auth-pending body::before{content:"Verificando sessão e permissões…";position:fixed;inset:0;display:grid;place-items:center;padding:25px;font:600 16px Arial,sans-serif;background:#f4f6f8;color:#37586a;z-index:99999}</style>
+  <title>Controle de Frota | Criar usuário</title>
+  <link rel="stylesheet" href="css/criar_usuario.css?v=layout1">
+  <script src="js/api.js?v=20261121f" defer></script><script src="js/app.js?v=layout1" defer></script><script src="js/criar_usuario.js?v=20261121f" defer></script>
+</head>
+<body data-page="criar_usuario">
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Controle de Frota</h2>
+      <nav aria-label="Menu principal"></nav>
+      <div class="user-area"><span id="current-user"></span><button id="logout-button" type="button">Sair</button></div>
+    </aside>
+    <main class="content">
+      <header class="page-header"><div><h1>Criar usuário</h1><p>Vincule uma conta a um funcionário já cadastrado.</p></div><a class="secondary-button" href="usuarios.html">Voltar para usuários</a></header>
+      <section class="form-card">
+        <form id="create-user-form">
+          <label for="func">Funcionário</label>
+          <select id="func" required><option value="">Carregando funcionários...</option></select>
+          <label for="email">E-mail do usuário</label>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="100" required>
+          <label for="nivel">Nível de acesso</label>
+          <select id="nivel" required>
+            <option value="USUARIO">USUARIO</option>
+            <option value="GERENTE">GERENTE</option>
+            <option value="MOTORISTA">MOTORISTA</option>
+            <option value="RH">RH</option>
+            <option value="ADMIN">ADMIN</option>
+          </select>
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" autocomplete="new-password" minlength="8" required>
+          <label for="confirmar-senha">Confirmar senha</label>
+          <input id="confirmar-senha" type="password" autocomplete="new-password" minlength="8" required>
+          <p class="hint">A senha deve ter pelo menos 12 caracteres. O e-mail será salvo na tabela Usuarios. O funcionário será vinculado pelo Id_Funcionario.</p>
+          <p id="form-error" role="alert"></p>
+          <div class="form-actions"><a class="secondary-button" href="usuarios.html">Cancelar</a><button class="primary-button" type="submit">Criar usuário</button></div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body></html>

@@ -1,0 +1,6 @@
+@import url("base.css?v=layout1");
+.check-card{max-width:650px;background:#fff;border:1px solid var(--line);padding:24px;border-radius:10px}
+#check-form{display:grid;gap:10px}#check-form>label,fieldset label{font-weight:600}
+#check-form select,#check-form textarea{width:100%}
+fieldset{display:grid;gap:8px;border:1px solid var(--line);border-radius:8px;padding:14px}
+legend{font-weight:700;padding:0 7px}

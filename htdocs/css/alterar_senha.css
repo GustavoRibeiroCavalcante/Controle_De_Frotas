@@ -1,0 +1,7 @@
+@import url("base.css?v=layout1");
+.password-panel{max-width:520px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.password-panel label{display:block;margin:15px 0 5px;font-weight:600}
+.password-panel input{width:100%}
+.password-panel button{margin-top:22px}
+#change-message{color:#126b43;min-height:24px}
+#change-message.error{color:var(--danger)}

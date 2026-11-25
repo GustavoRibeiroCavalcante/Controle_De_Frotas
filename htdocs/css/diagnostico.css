@@ -1,0 +1,7 @@
+@import url("base.css?v=layout1");
+.diagnostic{max-width:740px;margin:6vh auto;padding:28px;border-radius:12px;background:#fff;box-shadow:0 4px 24px #0b172010}
+.diagnostic h1{margin-bottom:18px}.diagnostic p{color:#465768}
+#checks{border:1px solid var(--line);padding:16px;border-radius:10px;white-space:pre-wrap;line-height:1.8}
+.links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:20px}
+#run{background:#246b8a;border:0;border-radius:6px;color:#fff;padding:10px 14px}
+.hint{font-size:13px}

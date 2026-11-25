@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR" class="auth-pending">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <style>html.auth-pending body .layout{display:none!important}html.auth-pending body::before{content:"Verificando sessão e permissões…";position:fixed;inset:0;display:grid;place-items:center;padding:25px;font:600 16px Arial,sans-serif;background:#f4f6f8;color:#37586a;z-index:99999}</style>
+  <title>Controle de Frota | Checklist diário</title>
+  <link rel="stylesheet" href="css/checklist.css?v=layout1">
+  <script src="js/api.js?v=20261121f" defer></script><script src="js/app.js?v=layout1" defer></script><script src="js/checklist.js?v=20261121f" defer></script>
+</head>
+<body data-page="checklist">
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Controle de Frota</h2><nav aria-label="Menu principal"></nav>
+      <div class="user-area"><span id="current-user"></span><button id="logout-button" type="button">Sair</button></div>
+    </aside>
+    <main class="content">
+      <header class="page-header"><div><h1>Checklist diário</h1><p class="status-note">Informe as condições do veículo antes da viagem. A equipe gestora poderá consultar o registro em Manutenções.</p></div></header>
+      <section class="check-card">
+        <form id="check-form">
+          <label for="veiculo">Veículo</label><select id="veiculo" required></select>
+          <fieldset><legend>Condições do veículo</legend>
+            <label for="pneus">Pneus</label><select id="pneus" required><option value="">Selecione</option><option value="OK">OK</option><option value="ATENCAO">Precisa de atenção</option></select>
+            <label for="luzes">Luzes</label><select id="luzes" required><option value="">Selecione</option><option value="OK">OK</option><option value="ATENCAO">Precisa de atenção</option></select>
+            <label for="oleo">Nível de óleo</label><select id="oleo" required><option value="">Selecione</option><option value="OK">OK</option><option value="ATENCAO">Precisa de atenção</option></select>
+            <label for="freios">Freios</label><select id="freios" required><option value="">Selecione</option><option value="OK">OK</option><option value="ATENCAO">Precisa de atenção</option></select>
+          </fieldset>
+          <label for="observacoes">Observações (opcional)</label><textarea id="observacoes" rows="4" maxlength="1000"></textarea>
+          <button type="submit" class="primary-button">Salvar checklist</button>
+          <p id="check-status" role="status" class="status-note"></p>
+        </form>
+      </section>
+    </main>
+  </div><div id="toast" role="status" aria-live="polite"></div>
+</body></html>

@@ -1,0 +1,11 @@
+@import url("base.css?v=layout1");
+.page-header p{margin:5px 0 0;color:var(--muted)}
+.form-card{max-width:620px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px}
+.form-card label{display:block;margin:14px 0 5px;font-weight:600}
+.form-card input,.form-card select{width:100%}
+.hint{color:var(--muted);font-size:13px;margin:12px 0}
+#form-error{color:var(--danger);min-height:1.5em}
+.form-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}
+.form-actions a{text-decoration:none;display:inline-flex;align-items:center}
+.primary-button,.secondary-button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+button:disabled{opacity:.65;cursor:wait}

@@ -1,0 +1,17 @@
+@import url("base.css?v=layout1");
+body.auth-page{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:20px;background:#e9f1ee}
+.auth-card{width:min(470px,100%);padding:clamp(20px,6vw,34px);background:var(--panel);border:1px solid var(--line);border-radius:17px;box-shadow:0 16px 42px #163b3020}
+.auth-card::before{content:"";display:block;width:42px;height:42px;margin-bottom:16px;background:url("../assets/logo-frota.svg") center/contain no-repeat}
+.auth-card h1{font-size:26px;margin:0 0 8px}.auth-card p{color:var(--muted)}
+.auth-card label{display:block;font-weight:600;margin:15px 0 6px}
+.auth-card input{width:100%;padding:12px}
+.auth-card button{width:100%;margin-top:20px;padding:13px;border:0;background:var(--accent);color:white;font-weight:700;border-radius:8px}
+.auth-card button:hover{background:var(--accent-strong)}
+.auth-card button:disabled{opacity:.65;cursor:wait}
+.auth-card a{color:var(--accent);font-weight:600}
+.auth-card .support-note{font-size:13px;margin-top:12px}
+.auth-card .auth-message{min-height:36px;font-size:14px;white-space:pre-line}
+.auth-card .auth-message.error{color:var(--danger)}
+.auth-card .auth-message.success{color:#126b43}
+.auth-card .back-link{display:inline-block;margin-top:14px}
+.auth-card .support-note{line-height:1.6}

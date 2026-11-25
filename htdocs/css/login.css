@@ -1,0 +1,33 @@
+@import url("base.css?v=layout1");
+
+.login-page{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:26px;background:#e9f1ee}
+.login-shell{width:min(100%,960px);display:grid;grid-template-columns:1.03fr 1fr;overflow:hidden;border:1px solid var(--line);border-radius:23px;background:#fff;box-shadow:0 22px 65px #163b3020}
+.login-brand{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:35px;
+  min-height:510px;padding:clamp(24px,4.2vw,46px);background:linear-gradient(150deg,#102c2b 22%,#155542);color:#fff;
+}
+.login-brand::before{content:"";position:absolute;inset:24% 0 0;z-index:-1;background:url("../assets/rotas-frota.svg") center/cover no-repeat;opacity:.72}
+.login-brand-name{display:flex;align-items:center;gap:11px;font-size:15px;font-weight:750}
+.login-brand-name img{width:42px;height:42px}
+.login-brand-copy{max-width:330px}
+.login-brand-copy small{display:block;color:var(--mint);text-transform:uppercase;letter-spacing:.13em;font-weight:800;font-size:11px}
+.login-brand-copy strong{display:block;margin-top:11px;font-size:clamp(28px,4.3vw,49px);line-height:1.04;letter-spacing:-.045em;text-shadow:0 2px 12px #0d2423}
+.login-card{width:100%;max-width:470px;align-self:center;justify-self:center;padding:clamp(24px,5vw,53px)}
+.login-card h1{margin-bottom:8px}
+.login-card p{margin:0 0 22px;color:var(--muted);font-size:14px}
+.login-card label{display:block;margin:14px 0 6px;font-size:13px;font-weight:700}
+.login-card input{width:100%;min-height:46px;background:#f8fbfa}
+.login-card button{width:100%;min-height:46px;margin-top:17px}
+#login-error{color:var(--danger);margin:10px 0 0;font-size:13px}
+#login-error:empty{margin:0}
+.login-card .auth-secondary{margin:17px 0 0;text-align:center}
+.auth-secondary a{color:var(--accent-strong);font-weight:700;text-underline-offset:3px}
+@media(max-width:680px){
+  .login-page{padding:14px}
+  .login-shell{max-width:450px;grid-template-columns:minmax(0,1fr);border-radius:17px}
+  .login-brand{min-height:0;gap:0;padding:19px 23px}
+  .login-brand::before{inset:0 0 0 35%;background-position:right center}
+  .login-brand-name img{width:36px;height:36px}
+  .login-brand-copy{display:none}
+  .login-card{padding:25px 22px 28px}
+}

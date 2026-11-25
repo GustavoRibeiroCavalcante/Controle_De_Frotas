@@ -1,0 +1,51 @@
+@import url("base.css?v=layout1");
+
+.dashboard-welcome{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:16px;
+  position:relative;isolation:isolate;overflow:hidden;min-height:216px;margin-bottom:24px;padding:clamp(19px,3.5vw,38px);
+  border:1px solid #205646;border-radius:20px;background:linear-gradient(110deg,#102d2b 38%,#155640);color:#fff;
+}
+.dashboard-welcome::before{
+  content:"";position:absolute;z-index:-1;inset:0 0 0 38%;
+  background:linear-gradient(90deg,#102d2b 0%,transparent 45%),url("../assets/rotas-frota.svg") right center/min(100%,540px) auto no-repeat;
+}
+.dashboard-welcome h1{color:#fff;font-size:clamp(32px,4.1vw,52px)}
+.dashboard-welcome p{max-width:44ch;color:#d2e9e1;font-size:14px}
+.eyebrow{display:block;margin-bottom:9px;color:var(--mint);font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.dashboard-date{display:inline-flex;align-items:center;gap:7px;justify-self:start;padding:7px 10px;border:1px solid #5e8b7d;border-radius:8px;background:#112f2b;color:#ebfff7;font-size:12px;font-weight:650}
+.dashboard-date:empty{display:none}
+.dashboard-shortcuts{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.dashboard-shortcuts [hidden]{display:none}
+.dashboard-shortcuts a{min-height:40px;font-size:13px}
+.dashboard-shortcuts .primary-button{background:var(--mint);color:#102d2b}
+.dashboard-shortcuts .primary-button:hover{background:#b1f8da}
+.dashboard-shortcuts .secondary-button{color:#f3fff9;background:#153833;border-color:#739e90}
+.dashboard-shortcuts .secondary-button:hover{background:#255248}
+.dashboard-welcome :focus-visible{outline-color:var(--mint)}
+.dashboard-section-title{display:flex;align-items:center;gap:9px;margin:0 0 12px}
+.dashboard-section-title .section-title{margin:0}
+.dashboard-section-title::before{content:"";width:4px;height:17px;border-radius:4px;background:var(--accent)}
+.dashboard-metrics .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.dashboard-metrics .card{min-height:118px}
+.metric-heading{display:flex;align-items:center;gap:9px}
+.metric-icon{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:9px;background:var(--accent-soft);color:var(--accent-strong)}
+.warning .metric-icon{background:#fff1d8;color:var(--warning)}
+.dashboard-trips{margin-top:23px}
+.dashboard-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;margin-bottom:11px}
+.dashboard-panel-heading .dashboard-section-title{margin:0}
+.dashboard-panel-heading a{color:var(--accent-strong);font-size:13px;font-weight:750;text-underline-offset:3px}
+.trip-count{display:inline-block;padding:4px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent-strong);font-size:12px;font-weight:700}
+.dashboard-table{min-width:550px}
+.dashboard-table td:first-child{font-weight:700}
+.dashboard-table .empty{text-align:center;padding:25px;color:var(--muted)}
+@media(max-width:650px){
+  .dashboard-welcome{grid-template-columns:minmax(0,1fr);gap:13px}
+  .dashboard-date{grid-row:1}
+  .dashboard-welcome::before{inset-inline-start:30%;opacity:.65}
+  .dashboard-metrics .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .dashboard-metrics .card{min-height:107px;padding:12px}
+  .metric-heading{gap:6px}
+  .metric-icon{width:27px;height:27px}
+  .metric-icon svg{width:15px;height:15px}
+  .dashboard-metrics small{font-size:12px;line-height:1.25}
+}

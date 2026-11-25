@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR" class="auth-pending">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <style>html.auth-pending body .layout{display:none!important}html.auth-pending body::before{content:"Verificando sessão e permissões…";position:fixed;inset:0;display:grid;place-items:center;padding:25px;font:600 16px Arial,sans-serif;background:#f4f6f8;color:#37586a;z-index:99999}</style>
+  <title>Controle de Frota | Cargas</title>
+  <link rel="stylesheet" href="css/cargas.css?v=layout1">
+  <script src="js/api.js?v=20261121f" defer></script><script src="js/app.js?v=layout1" defer></script><script src="js/crud.js?v=20261121f" defer></script>
+</head>
+<body data-page="cargas">
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Controle de Frota</h2>
+      <nav aria-label="Menu principal"></nav>
+      <div class="user-area"><span id="current-user"></span><button id="logout-button" type="button">Sair</button></div>
+    </aside>
+    <main class="content">
+      <header class="page-header"><h1>Cargas</h1>
+        <div class="header-actions"><input id="search-input" type="search" placeholder="Buscar..." aria-label="Buscar"><button id="add-button" hidden class="primary-button" type="button">Novo registro</button></div>
+      </header>
+      <section class="table-wrap"><table id="data-table"></table></section>
+    </main>
+  </div>
+  <dialog id="record-dialog">
+    <form id="record-form">
+      <h2 id="dialog-title">Novo registro</h2><div id="form-fields"></div>
+      <div class="dialog-actions"><button id="cancel-button" class="secondary-button" type="button">Cancelar</button><button class="primary-button" type="submit">Salvar</button></div>
+    </form>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body></html>

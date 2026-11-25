@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR" class="auth-pending">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <style>html.auth-pending body .layout{display:none!important}html.auth-pending body::before{content:"Verificando sessão e permissões…";position:fixed;inset:0;display:grid;place-items:center;padding:25px;font:600 16px Arial,sans-serif;background:#f4f6f8;color:#37586a;z-index:99999}</style>
+  <title>Controle de Frota | Trocar senha</title>
+  <link rel="stylesheet" href="css/alterar_senha.css?v=layout1">
+  <script src="js/api.js?v=20261121f" defer></script><script src="js/app.js?v=layout1" defer></script><script src="js/alterar_senha.js?v=20261121f" defer></script>
+</head>
+<body data-page="alterar_senha">
+<div class="layout">
+<aside class="sidebar"><h2>Controle de Frota</h2><nav aria-label="Menu principal"></nav>
+<div class="user-area"><span id="current-user"></span><button id="logout-button" type="button">Sair</button></div>
+</aside>
+<main class="content">
+<header class="page-header"><h1>Trocar minha senha</h1></header>
+<section class="password-panel">
+<p>Para sua segurança, informe a senha atual e escolha uma senha nova.</p>
+<form id="change-form">
+<label for="senha-atual">Senha atual</label><input id="senha-atual" type="password" autocomplete="current-password" required>
+<label for="senha-nova">Nova senha</label><input id="senha-nova" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
+<label for="senha-confirma">Confirmar nova senha</label><input id="senha-confirma" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
+<button class="primary-button" type="submit">Alterar senha</button>
+<p id="change-message" role="status" aria-live="polite"></p>
+</form></section></main>
+</div><div id="toast" role="status" aria-live="polite"></div>
+</body></html>
